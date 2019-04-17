@@ -1,4 +1,4 @@
-;;kernel.asm
+;;my bootloader
 bits 32			;nasm directive - to specify  32 bit
 section .text
         align 4
@@ -7,7 +7,7 @@ section .text
         dd - (0x1BADB002 + 0x00) ;checksum. m+f+c should be zero
 
 global start
-extern main_kernel	        ;kmain is defined in the c file
+extern main_kernel	        ;main_kernel is defined in the kernel/kernel.c file
 
 start:
   cli 			;block interrupts
@@ -16,5 +16,5 @@ start:
   hlt		 	;halt the CPU
 
 section .bss
-resb 8192		;8KB for stack
+resb 8192		;8KB for stack 
 stack_space:

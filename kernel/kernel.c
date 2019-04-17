@@ -12,7 +12,7 @@ void main_kernel(void){
     while(i<80*25*2){  // 25*80 with 2 bytes each 
         vidptr[i] = ' ';
         vidptr[i+1] = 0x07;
-        i+=2
+        i+=2;
     }
     
     i=0;
